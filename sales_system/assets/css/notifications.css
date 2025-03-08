@@ -1,0 +1,227 @@
+/* Notifications Styling */
+
+/* Notification Container */
+.notifications-container {
+    max-height: 400px;
+    overflow-y: auto;
+    width: 350px;
+    padding: 0;
+}
+
+/* Notification Item */
+.notification-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background-color: #f8f9fa;
+}
+
+.notification-item.read {
+    opacity: 0.7;
+    background-color: #f8f9fa;
+}
+
+/* Notification Icons */
+.notification-item i.fas {
+    margin-right: 8px;
+}
+
+.notification-item i.fa-info-circle {
+    color: #17a2b8;
+}
+
+.notification-item i.fa-exclamation-triangle {
+    color: #ffc107;
+}
+
+.notification-item i.fa-check-circle {
+    color: #28a745;
+}
+
+.notification-item i.fa-times-circle {
+    color: #dc3545;
+}
+
+/* Notification Actions */
+.notification-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.notification-actions button {
+    padding: 0;
+    background: none;
+    border: none;
+    color: #6c757d;
+    transition: color 0.2s ease;
+}
+
+.notification-actions button:hover {
+    color: #343a40;
+}
+
+/* Notification Badge */
+.notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    background-color: #dc3545;
+    color: white;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Notification Dropdown */
+.notification-dropdown {
+    position: relative;
+}
+
+.notification-dropdown .dropdown-menu {
+    width: 350px;
+    padding: 0;
+}
+
+.notification-header {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notification-footer {
+    padding: 12px 15px;
+    border-top: 1px solid #eee;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+/* Empty State */
+.notifications-empty {
+    padding: 30px;
+    text-align: center;
+    color: #6c757d;
+}
+
+.notifications-empty i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Toast Container */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1060;
+}
+
+.toast {
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+/* Scrollbar Styling */
+.notifications-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notifications-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.notifications-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.notifications-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Notification Time */
+.notification-time {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 4px;
+}
+
+/* Notification Link */
+.notification-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.notification-link:hover {
+    text-decoration: none;
+}
+
+/* Notification Types */
+.notification-item.type-info {
+    border-left: 4px solid #17a2b8;
+}
+
+.notification-item.type-warning {
+    border-left: 4px solid #ffc107;
+}
+
+.notification-item.type-success {
+    border-left: 4px solid #28a745;
+}
+
+.notification-item.type-error {
+    border-left: 4px solid #dc3545;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.notification-item.new {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .notifications-container,
+    .notification-dropdown .dropdown-menu {
+        width: 100vw;
+        position: fixed;
+        top: 56px; /* Adjust based on your navbar height */
+        left: 0;
+        right: 0;
+        max-height: calc(100vh - 56px);
+        border-radius: 0;
+    }
+    
+    #toast-container {
+        width: 100%;
+        right: 0;
+        padding: 10px;
+    }
+    
+    .toast {
+        width: 100%;
+    }
+}
