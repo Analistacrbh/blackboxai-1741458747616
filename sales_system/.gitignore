@@ -1,0 +1,63 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Composer
+composer.phar
+composer.lock
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and backups
+/logs/*
+!/logs/.gitkeep
+/backups/*
+!/backups/.gitkeep
+
+# Uploads
+/uploads/*
+!/uploads/.gitkeep
+
+# Cache
+/cache/*
+!/cache/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Configuration files with sensitive data
+config/database.php
+
+# Generated files
+/public/assets/
+*.pdf
+*.xls
+*.xlsx
+*.csv
+
+# Test files
+/tests/coverage/
+/phpunit.xml
+
+# Other
+*.log
+*.cache
+*.bak
+.phpunit.result.cache
